@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed');
+body {
+    background-image: url(../img/fondo2.jpg);
+    color: black;
+    font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+header {
+    margin-top: 20px;
+}
+
+img {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.redond {
+    border-radius: 12px;
+}
+
+a {
+    text-decoration: underline;
+    color: green;
+    margin-bottom: 30px;
+}
+
+#bannerflog img {
+    height: 100px;
+}
+
+h1,
+p {
+    color: #2f1780;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+textarea,
+input {
+    width: 100%;
+    border-radius: 0px;
+    border: 5px solid #0a0407;
+    margin-bottom: 20px;
+}
+
+.posteo {
+    color: DeepPink;
+}
+
+.posteo strong {
+    display: block;
+}
+
+.posteo hr {
+    border: 1px solid DeepPink;
+}
+
+
+/* PARA CORAZON */
+
+.corazon {
+    font-size: 40px;
+    color: gray;
+    text-align: center;
+}
+
+.rojo {
+    color: red;
+}
+
+footer {
+    padding: 10px;
+}
+
+.box {
+    background-color: rgba(18, 3, 3, 0.34);
+    border-radius: 12px;
+}
+
+
+/* Estilos comentarios */
+
+.color {
+    background-color: rgba(245, 234, 244, 0.88);
+    border-radius: 7px;
+    padding: 3%;
+    margin: 3%;
+}
+
+#dogs {
+    background-color: antiquewhite;
+    color: black;
+}
+
+#name,
+#clave,    
+#divs {
+    text-transform: capitalize;
+}
+
