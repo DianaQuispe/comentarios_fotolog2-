@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -58,8 +60,8 @@
                         <h3>Comentario</h3>
                         <textarea class="redond" id="clave"></textarea>
                     </form>
-                    <button type="button" class="btn btn-primary redond" onclick="coment()" value="guardar datos">Guardar</button>
-                    <button type="button" class="btn btn-primary redond" onclick="cleanData()" value="Limpiar datos">Limpiar datos</button>
+                    <button id="btnGuardar" type="button" class="btn btn-primary redond" value="guardar datos">Guardar</button>
+                    <button id="btnLimpiar" type="button" class="btn btn-primary redond" value="Limpiar datos">Limpiar datos</button>
                     <div id="data"></div>
 
                 </div>

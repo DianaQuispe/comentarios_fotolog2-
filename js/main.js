@@ -1,54 +1,48 @@
 /*aquí va tu código*/
-recoverData();
+const app = {
+    item: {
+        name: undefined,
+        comment: undefined
+    },
+    init: function () {
+        app.item.name = $('#name');
+        app.item.comment = $('#clave');
 
-function save() {
-    var name = document.getElementById('name').value;
-    var clave = document.getElementById('clave').value;
-    localStorage.setItem(name, clave);
-}
+        app.setup();
+        app.showComents();
+    },
 
-function recoverData() {
-    document.getElementById('data').innerHTML = "";
-    for (var i = 0; i < localStorage.length; i++) {
+    setup: function () {
+        $('#btnGuardar').click(app.addComment);
+        $('#btnLimpiar').click(app.clearComments);
 
-        var name = localStorage.key(i);
-        var clave = localStorage.getItem(name);
-        var divs = document.createElement('div');
-        divs.setAttribute('id', 'divs');
-        divs.className = 'color';
+    },
 
-        var nombre = document.createElement('h3');
-        var texto1 = document.createTextNode(name);
-        nombre.appendChild(texto1);
+    addComment: function () {
+        $('#data').addClass('color');
+        localStorage.setItem(app.item.name.val(), app.item.comment.val());
+        app.showComents();
+        $('#name').innerHTML == "";
+        $('#clave').innerHTML == "";
 
-        var comentario = document.createElement('p');
-        var texto2 = document.createTextNode(clave);
-        comentario.appendChild(texto2);
 
-        divs.appendChild(nombre);
-        divs.appendChild(comentario);
-        document.getElementById('data').appendChild(divs);
+
+    },
+    showComents: function () {
+        for (var clave in localStorage) {
+            var coment = localStorage[clave];
+            $('#data').append(`<h3> ${clave} </h3>\
+                            <p>  ${coment}</p>`);
+
+        }
+        $('#name').innerHTML == "";
+        $('#clave').innerHTML == "";
+
+    },
+    clearComments: function () {
+        $('#data').empty();
+        localStorage.clear();
+
     }
-
-}
-
-function coment() {
-    if (typeof (Storage) !== "undefined") {
-        save();
-        recoverData();
-        document.getElementById("name").value = "";
-        document.getElementById("clave").value = "";
-
-    } else {
-        document.getElementById("data").innerHTML = "Sorry, your browser does not support Web Storage...";
-    }
-
-
-
-}
-
-function cleanData() {
-    document.getElementById("data").innerHTML = "";
-
-    localStorage.clear();
-}
+};
+$(document).ready(app.init);
